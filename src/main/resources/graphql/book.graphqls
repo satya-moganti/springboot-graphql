@@ -1,0 +1,18 @@
+ type Book {
+    id: ID!
+    name: String!
+    description: String
+    pagecount: Int
+    publisher: String
+    publishedyear: String
+    author: Author
+}
+#BOOK Entity
+extend type Query {
+    bookById(id: ID): Book
+    getBooks(count: Int):[Book]!
+}
+
+extend type Mutation {
+	createBook(name: String!,description: String, pagecount: Int, publisher: String, publishedyear: String, author: ID!):Book!
+}

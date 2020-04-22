@@ -1,0 +1,14 @@
+type Author {
+    id: ID!
+    fname: String!
+    lname: String
+}
+
+type Query {
+    authorById(id: ID): Author
+    getAuthors(count: Int):[Author]!
+}
+
+type Mutation {
+    createAuthor(fname: String!, lname: String): Author!
+}
